@@ -2,7 +2,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 
-def extract_google_sheet(spreadsheet_id,range):
+def extract_google_sheet(spreadsheet_id, range):
     SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
     SERVICE_ACCOUNT_FILE = "../credentials.json"
     creds = service_account.Credentials.from_service_account_file(
@@ -18,5 +18,4 @@ def extract_google_sheet(spreadsheet_id,range):
     )
     result = sheet_values.execute()
     values = result.get("values", [])
-
-    print(values)
+    return values
