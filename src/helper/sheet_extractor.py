@@ -4,8 +4,10 @@ from googleapiclient.discovery import build
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 SERVICE_ACCOUNT_FILE = "credentials.json"
 
+
 class SheetTypes:
     GOOGLE_SHEETS = "google_sheets"
+
 
 class SheetExtractor:
 
@@ -18,7 +20,7 @@ class SheetExtractor:
         else:
             raise ValueError("Unsupported spreadsheet type")
 
-    def extract_google_sheet(self,spreadsheet_id, range):
+    def extract_google_sheet(self, spreadsheet_id, range):
 
         creds = service_account.Credentials.from_service_account_file(
             SERVICE_ACCOUNT_FILE,
@@ -27,7 +29,7 @@ class SheetExtractor:
         service = build("sheets", "v4", credentials=creds)
 
         sheet = service.spreadsheets()
-        
+
         sheet_values = sheet.values().get(
             spreadsheetId=spreadsheet_id,
             range=range,

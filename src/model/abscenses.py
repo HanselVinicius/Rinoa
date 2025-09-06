@@ -1,4 +1,4 @@
-from sqlalchemy import BigInteger, Column, DateTime, String,Date
+from sqlalchemy import BigInteger, Column, Date, DateTime, String
 
 from src.infra.db import Base
 
