@@ -9,7 +9,7 @@ from src.usecase.save_abscense_from_sheet import save_abscense_from_sheet
 router = APIRouter()
 
 
-@router.get("/extract")
+@router.get("/abscenses/extract")
 async def extract_data(db: AsyncSession = Depends(get_db)):
     spreadsheet_id = os.getenv("ABSCENSES_SPREADSHEET_ID")
     range_name = "abscenses"
