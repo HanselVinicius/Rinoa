@@ -2,9 +2,9 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from api.health import router as health_router
-from api.v1.routes.extract_data import router as extract_data_router
-from infra.config import settings
+from src.api.health import router as health_router
+from src.api.v1.routes.abscenses_controller import router as extract_data_router
+from src.infra.config import settings
 
 
 @asynccontextmanager

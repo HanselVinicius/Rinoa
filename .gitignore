@@ -31,3 +31,4 @@ dist/
 *.swp
 *.DS_Store
 Thumbs.db
+metabase-data
