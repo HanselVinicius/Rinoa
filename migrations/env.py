@@ -13,6 +13,7 @@ if config.config_file_name is not None:
 
 from src.infra.db import Base
 from src.model.abscenses import Abscenses 
+from src.model.skips import Skips 
 from src.infra.config import settings
 
 target_metadata = Base.metadata

@@ -3,7 +3,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from src.api.health import router as health_router
-from src.api.v1.routes.abscenses_controller import router as extract_data_router
+from src.api.v1.routes.abscenses_controller import router as abscenses_router
+from src.api.v1.routes.skips_controller import router as skips_router
+
 from src.infra.config import settings
 
 
@@ -27,7 +29,11 @@ def create_application() -> FastAPI:
     )
 
     app.include_router(
-        router=extract_data_router, prefix="/api/v1", tags=["Data Extraction"]
+        router=abscenses_router, prefix="/api/v1", tags=["abscenses"]
+    )
+    
+    app.include_router(
+        router=skips_router, prefix="/api/v1", tags=["skips"]
     )
 
     return app
