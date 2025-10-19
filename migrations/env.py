@@ -14,6 +14,13 @@ if config.config_file_name is not None:
 from src.infra.db import Base
 from src.model.abscenses import Abscenses 
 from src.model.skips import Skips 
+from src.model.teacher_regularity import TeacherRegularity 
+from src.model.manage_complexity import ManageComplexity 
+from src.model.elementary_school import ElementarySchool 
+from src.model.percent_groups import PercentGroups
+from src.model.teach_stages import TeachStages
+from src.model.teacher_training import TeacherTraining
+
 from src.infra.config import settings
 
 target_metadata = Base.metadata
