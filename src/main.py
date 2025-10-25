@@ -10,7 +10,9 @@ from src.api.v1.routes.create_manage_complexity_controller import router as mana
 from src.api.v1.routes.teacher_training_controller import router as teacher_training
 
 from src.infra.config import settings
+import logging
 
+logging.basicConfig(level=logging.DEBUG)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
